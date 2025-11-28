@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Users, UserCog, BookOpen, Heart } from "lucide-react";
 
 const Home = () => {
@@ -32,20 +33,178 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-5xl font-bold mb-6">
+        <h1 className="text-5xl font-bold mb-6 animate-fade-in">
           Système de Gestion Scolaire
         </h1>
-        <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in">
           Plateforme complète pour gérer votre établissement scolaire, les étudiants, 
           les enseignants et les parents en un seul endroit.
         </p>
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center flex-wrap">
           <Link to="/student">
-            <Button size="lg">Espace Étudiant</Button>
+            <Button size="lg" className="hover-scale">Espace Étudiant</Button>
           </Link>
           <Link to="/parent">
-            <Button size="lg" variant="outline">Espace Parent</Button>
+            <Button size="lg" variant="outline" className="hover-scale">Espace Parent</Button>
           </Link>
+        </div>
+      </section>
+
+      {/* Pricing Section for Schools */}
+      <section className="bg-muted/30 py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Formules d'Abonnement</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Choisissez la formule adaptée à votre établissement scolaire
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Basic Plan */}
+            <Card className="hover:shadow-xl transition-all hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-2xl">Basique</CardTitle>
+                <CardDescription>Pour les petites écoles</CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">29€</span>
+                  <span className="text-muted-foreground">/mois</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Jusqu'à 200 étudiants</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Gestion des notes</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Emploi du temps</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Support email</span>
+                  </li>
+                </ul>
+                <Button className="w-full" variant="outline">
+                  Choisir Basique
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Professional Plan */}
+            <Card className="border-primary shadow-lg hover:shadow-2xl transition-all hover:scale-105 relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <Badge className="bg-primary text-primary-foreground">Populaire</Badge>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-2xl">Professionnel</CardTitle>
+                <CardDescription>Pour les établissements moyens</CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">79€</span>
+                  <span className="text-muted-foreground">/mois</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Jusqu'à 1000 étudiants</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Tout du plan Basique</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Messagerie intégrée</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Rapports avancés</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Support prioritaire</span>
+                  </li>
+                </ul>
+                <Button className="w-full">
+                  Choisir Professionnel
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Enterprise Plan */}
+            <Card className="hover:shadow-xl transition-all hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-2xl">Entreprise</CardTitle>
+                <CardDescription>Pour les grandes institutions</CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">199€</span>
+                  <span className="text-muted-foreground">/mois</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Étudiants illimités</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Tout du plan Pro</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">API personnalisée</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Hébergement dédié</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-primary text-xs">✓</span>
+                    </div>
+                    <span className="text-sm">Support 24/7</span>
+                  </li>
+                </ul>
+                <Button className="w-full" variant="outline">
+                  Nous Contacter
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
