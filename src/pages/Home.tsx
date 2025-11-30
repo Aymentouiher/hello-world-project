@@ -15,17 +15,8 @@ const Home = () => {
             <span className="text-2xl font-bold">SchoolHub</span>
           </div>
           <nav className="flex gap-4">
-            <Link to="/super-admin">
-              <Button variant="ghost">Super Admin</Button>
-            </Link>
-            <Link to="/school-admin">
-              <Button variant="ghost">Admin</Button>
-            </Link>
-            <Link to="/student">
-              <Button variant="ghost">Étudiant</Button>
-            </Link>
-            <Link to="/parent">
-              <Button variant="ghost">Parent</Button>
+            <Link to="/login">
+              <Button variant="ghost">Connexion</Button>
             </Link>
           </nav>
         </div>
@@ -41,11 +32,17 @@ const Home = () => {
           les enseignants et les parents en un seul endroit.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
-          <Link to="/student">
-            <Button size="lg" className="hover-scale">Espace Étudiant</Button>
+          <Link to="/login">
+            <Button size="lg" className="hover-scale gap-2">
+              <GraduationCap className="h-5 w-5" />
+              Espace Étudiant
+            </Button>
           </Link>
-          <Link to="/parent">
-            <Button size="lg" variant="outline" className="hover-scale">Espace Parent</Button>
+          <Link to="/login">
+            <Button size="lg" variant="outline" className="hover-scale gap-2">
+              <Users className="h-5 w-5" />
+              Espace Parent
+            </Button>
           </Link>
         </div>
       </section>
